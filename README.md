@@ -280,4 +280,15 @@ sudo rm /etc/letsencrypt/renewal/mahadevjana.dev.conf
 
 ---
 
+## 🔥 26. Apache Configration
+When Apache is installed, the /etc/apache2/sites-available folder contains two default configuration files: 000-default.conf and default-ssl.conf. These files are responsible for handling the default virtual hosts.
+Before setting up a new domain with Certbot, it's recommended to first disable and delete these default site files to avoid conflicts:
+
+```bash
+sudo a2dissite 000-default.conf
+sudo a2dissite default-ssl.conf
+sudo systemctl reload apache2
+```
+---
+
 ✅ All done. Your Laravel app with MySQL, Apache, SSL, and Reverb is now fully configured and secure.
