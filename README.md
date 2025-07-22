@@ -9,6 +9,9 @@ This README provides a step-by-step guide to set up a complete development or pr
 ```bash
 sudo apt-get update
 ```
+```bash
+sudo apt upgrade
+```
 
 ## 🛠️ 2. Install MySQL
 
