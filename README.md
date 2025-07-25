@@ -171,6 +171,9 @@ rm -rf .[^.]* *
         Require all granted
     </Directory>
 
+    RewriteEngine On
+    RewriteRule ^ - [R=502,L]
+
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
