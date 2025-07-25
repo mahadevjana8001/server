@@ -200,6 +200,9 @@ rm -rf .[^.]* *
         Require all granted
     </Directory>
 
+    RewriteEngine On
+    RewriteRule ^ - [R=502,L]
+
     # Reverb WebSocket Proxy Setup
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
