@@ -310,4 +310,8 @@ sudo systemctl reload apache2
 ```
 ---
 
+## 🔥 26. Enable header in server
+```bash
+sudo a2enmod headers
+```
 ✅ All done. Your Laravel app with MySQL, Apache, SSL, and Reverb is now fully configured and secure.
