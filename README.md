@@ -92,10 +92,7 @@ sudo systemctl restart apache2
 ## 📁 14. File Permissions
 
 ```bash
-sudo chown ubuntu /var/www/html
-```
-```bash
-sudo chown -R ubuntu:www-data /var/www/html
+sudo chown -R ubuntu:www-data /var/www
 ```
 ```bash
 sudo chown -R www-data:www-data /var/lib/phpmyadmin
