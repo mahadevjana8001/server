@@ -310,7 +310,7 @@ sudo systemctl reload apache2
 ```
 ---
 
-## 🔥 26. Enable header in server
+## 🔥 27. Enable header in server
 ```bash
 sudo a2enmod headers
 ```
