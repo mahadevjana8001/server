@@ -178,9 +178,6 @@ rm -rf .[^.]* *
         Require all granted
     </Directory>
 
-    RewriteEngine On
-    RewriteRule ^ - [R=502,L]
-
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
@@ -206,9 +203,6 @@ rm -rf .[^.]* *
         AllowOverride All
         Require all granted
     </Directory>
-
-    RewriteEngine On
-    RewriteRule ^ - [R=502,L]
 
     # Reverb WebSocket Proxy Setup
     RewriteEngine On
