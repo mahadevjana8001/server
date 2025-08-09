@@ -314,4 +314,34 @@ sudo systemctl reload apache2
 ```bash
 sudo a2enmod headers
 ```
+## 🔥 28. Apache Configuration: Block Direct IP Access
+Purpose:This configuration ensures that any requests made directly to the server’s IP address (instead of a configured domain name) are blocked or redirected.
+```bash
+<VirtualHost *:80>
+    # Catch-all for HTTP requests without a matching ServerName
+    ServerName _default_
+    RedirectMatch 504 ^/(.*)$
+</VirtualHost>
+
+<VirtualHost *:443>
+    # Catch-all for HTTPS requests without a matching ServerName
+    ServerName _default_
+    DocumentRoot /var/www/default
+
+    # Enable SSL
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/default.crt
+    SSLCertificateKeyFile /etc/ssl/private/default.key
+
+    # Restrict access to the default directory
+    <Directory /var/www/default>
+        Options -Indexes
+        Require all denied
+    </Directory>
+
+    # Send HTTP 504 for all direct IP requests
+    RedirectMatch 504 ^/(.*)$
+</VirtualHost>
+```
+
 ✅ All done. Your Laravel app with MySQL, Apache, SSL, and Reverb is now fully configured and secure.
