@@ -164,9 +164,11 @@ rm -rf .[^.]* *
 
 ---
 
-## 🌐 20. HTTP to HTTPS Redirection (Port 80)
-nano /etc/apache2/sites-available/api.campaigningtool.com.conf
+## 🌐 20. HTTP Domain Configration
 
+```apache
+nano /etc/apache2/sites-available/api.campaigningtool.com.conf
+```
 
 ```apache
 <VirtualHost *:80>
