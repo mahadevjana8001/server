@@ -167,7 +167,7 @@ rm -rf .[^.]* *
 ## 🌐 20. HTTP Domain Configration
 
 ```apache
-nano /etc/apache2/sites-available/api.campaigningtool.com.conf
+sudo nano /etc/apache2/sites-available/api.campaigningtool.com.conf
 ```
 
 ```apache
