@@ -165,14 +165,16 @@ rm -rf .[^.]* *
 ---
 
 ## 🌐 20. HTTP to HTTPS Redirection (Port 80)
+nano /etc/apache2/sites-available/api.campaigningtool.com.conf
+
 
 ```apache
 <VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    ServerName test.mahadevjana.dev
-    DocumentRoot /var/www/html/test
+    ServerAdmin janamahadev14@gmail.com
+    ServerName admin.campaigningtool.com
+    DocumentRoot /var/www/admin.campaigningtool.com
 
-    <Directory /var/www/html/test>
+    <Directory /var/www/admin.campaigningtool.com>
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
@@ -182,23 +184,16 @@ rm -rf .[^.]* *
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
     RewriteEngine on
-    RewriteCond %{SERVER_NAME} =test.mahadevjana.dev
+    RewriteCond %{SERVER_NAME} =admin.campaigningtool.com
     RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 </VirtualHost>
-```
-
----
-
-## 🔐 21. SSL + Reverb Proxy Config
-
-```apache
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
-    ServerAdmin webmaster@localhost
-    ServerName test.mahadevjana.dev
-    DocumentRoot /var/www/html/test
+    ServerAdmin janamahadev14@gmail.com
+    ServerName admin.campaigningtool.com
+    DocumentRoot /var/www/admin.campaigningtool.com
 
-    <Directory /var/www/html/test>
+    <Directory /var/www/admin.campaigningtool.com>
         Options -Indexes +FollowSymLinks
         AllowOverride All
         Require all granted
@@ -213,12 +208,14 @@ rm -rf .[^.]* *
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-    SSLCertificateFile /etc/letsencrypt/live/test.mahadevjana.dev/fullchain.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/test.mahadevjana.dev/privkey.pem
+    SSLCertificateFile /etc/letsencrypt/live/admin.campaigningtool.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/admin.campaigningtool.com/privkey.pem
     Include /etc/letsencrypt/options-ssl-apache.conf
 </VirtualHost>
 </IfModule>
 ```
+
+---
 
 ## ✅ Enable Required Apache Modules
 
@@ -233,7 +230,7 @@ sudo systemctl restart apache2
 
 ---
 
-## 🎼 22. Composer Installation
+## 🎼 21. Composer Installation
 
 ```bash
 sudo apt update
@@ -249,7 +246,7 @@ composer install
 
 ---
 
-## 🧠 23. PHP Settings (php.ini)
+## 🧠 22. PHP Settings (php.ini)
 
 Edit PHP config (usually in `/etc/php/7.x/apache2/php.ini`):
 
@@ -263,7 +260,7 @@ max_input_time = 300
 
 ---
 
-## 🗂 24. Apache Root Directory Override
+## 🗂 23. Apache Root Directory Override
 
 Edit `/etc/apache2/apache2.conf`:
 
@@ -277,7 +274,7 @@ Edit `/etc/apache2/apache2.conf`:
 
 ---
 
-## 🔥 25. Delete SSL Certificate (if needed)
+## 🔥 24. Delete SSL Certificate (if needed)
 
 ```bash
 sudo rm -r /etc/letsencrypt/live/mahadevjana.dev
@@ -287,7 +284,7 @@ sudo rm /etc/letsencrypt/renewal/mahadevjana.dev.conf
 
 ---
 
-## 🔥 26. Apache Configration
+## 🔥 25. Apache Configration
 When Apache is installed, the /etc/apache2/sites-available folder contains two default configuration files: **000-default.conf** and **default-ssl.conf**. These files are responsible for handling the default virtual hosts.
 Before setting up a new domain with Certbot, it's recommended to first disable and delete these default site files to avoid conflicts:
 
@@ -304,11 +301,11 @@ sudo systemctl reload apache2
 ```
 ---
 
-## 🔥 27. Enable header in server
+## 🔥 26. Enable header in server
 ```bash
 sudo a2enmod headers
 ```
-## 🔥 28. Apache Configuration: Block Direct IP Access
+## 🔥 27. Apache Configuration: Block Direct IP Access
 Purpose:This configuration ensures that any requests made directly to the server’s IP address (instead of a configured domain name) are blocked or redirected.
 ```bash
 <VirtualHost *:80>
