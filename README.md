@@ -337,4 +337,19 @@ Purpose:This configuration ensures that any requests made directly to the server
 </VirtualHost>
 ```
 
+## 🔥 27. Apache Configuration: Block Direct IP Access
+
+| Command                                | Description                                  |
+| -------------------------------------- | -------------------------------------------- |
+| `sudo supervisorctl status`            | Shows all managed processes and their status |
+| `sudo supervisorctl start <process>`   | Start a process                              |
+| `sudo supervisorctl stop <process>`    | Stop a process                               |
+| `sudo supervisorctl restart <process>` | Restart a process                            |
+| `sudo supervisorctl reread`            | Detect new/changed config files              |
+| `sudo supervisorctl update`            | Reload Supervisor with new configs           |
+| `sudo service supervisor start`        | Start Supervisor service                     |
+| `sudo service supervisor restart`      | Restart Supervisor service                   |
+| `sudo service supervisor stop`         | Stop Supervisor service                      |
+
+
 ✅ All done. Your Laravel app with MySQL, Apache, SSL, and Reverb is now fully configured and secure.
