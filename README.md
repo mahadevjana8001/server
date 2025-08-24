@@ -347,9 +347,9 @@ Purpose:This configuration ensures that any requests made directly to the server
 | `sudo supervisorctl restart <process>` | Restart a process                            |
 | `sudo supervisorctl reread all`            | Detect new/changed config files              |
 | `sudo supervisorctl update all`            | Reload Supervisor with new configs           |
-| `sudo service supervisor start all`        | Start Supervisor service                     |
-| `sudo service supervisor restart all`      | Restart Supervisor service                   |
-| `sudo service supervisor stop all`         | Stop Supervisor service                      |
+| `sudo supervisorctl start all`        | Start Supervisor service                     |
+| `sudo supervisorctl restart all`      | Restart Supervisor service                   |
+| `sudo supervisorctl stop all`         | Stop Supervisor service                      |
 
 
 ✅ All done. Your Laravel app with MySQL, Apache, SSL, and Reverb is now fully configured and secure.
