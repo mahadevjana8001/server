@@ -337,7 +337,7 @@ Purpose:This configuration ensures that any requests made directly to the server
 </VirtualHost>
 ```
 
-## 🔥 27. Apache Configuration: Block Direct IP Access
+## 🔥 28. Apache Supervisor control command
 
 | Command                                | Description                                  |
 | -------------------------------------- | -------------------------------------------- |
